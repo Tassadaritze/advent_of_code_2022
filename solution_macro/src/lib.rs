@@ -20,7 +20,7 @@ pub fn match_solutions(_: TokenStream) -> TokenStream {
 
     let mut out = String::from("return match arg {\n");
     for file in solutions {
-        let test = match file.to_str() {
+        let file_name = match file.to_str() {
             Some(str) => {
                 if str.starts_with("solution_") {
                     str
@@ -31,9 +31,9 @@ pub fn match_solutions(_: TokenStream) -> TokenStream {
             None => continue,
         };
         out += "    \"";
-        out += &test[9..12];
+        out += &file_name[9..12];
         out += "\" => Ok(String::from(";
-        out += &test[0..12];
+        out += &file_name[0..12];
         out += "::solve(&input))),\n";
     }
     out += "    _ => Err(Error::new(
