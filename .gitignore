@@ -1,2 +1,6 @@
 /target
 /.idea
+/solution_macro/target/
+/solution_macro/Cargo.lock
+input
+output
