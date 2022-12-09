@@ -5,6 +5,7 @@ use std::{fs, io};
 mod solution_1_1;
 mod solution_1_2;
 mod solution_2_1;
+mod solution_2_2;
 
 pub fn get_solution(arg: &str) -> io::Result<String> {
     let input = fs::read_to_string("input")?;
