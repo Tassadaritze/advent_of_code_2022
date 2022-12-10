@@ -8,6 +8,8 @@ mod solution_2_1;
 mod solution_2_2;
 mod solution_3_1;
 mod solution_3_2;
+mod solution_4_1;
+mod solution_4_2;
 
 pub fn get_solution(arg: &str) -> io::Result<String> {
     let input = fs::read_to_string("input")?;
