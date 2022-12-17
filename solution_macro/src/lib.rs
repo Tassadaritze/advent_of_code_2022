@@ -23,7 +23,7 @@ pub fn match_solutions(_: TokenStream) -> TokenStream {
         let file_name = match file.to_str() {
             Some(str) => {
                 if str.starts_with("solution_") {
-                    str
+                    str.strip_suffix(".rs").unwrap()
                 } else {
                     continue;
                 }
@@ -31,9 +31,9 @@ pub fn match_solutions(_: TokenStream) -> TokenStream {
             None => continue,
         };
         out += "    \"";
-        out += &file_name[9..12];
+        out += &file_name[9..];
         out += "\" => Ok(String::from(";
-        out += &file_name[0..12];
+        out += &file_name[0..];
         out += "::solve(&input))),\n";
     }
     out += "    _ => Err(Error::new(
