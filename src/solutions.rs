@@ -2,6 +2,8 @@ use solution_macro::match_solutions;
 use std::io::{Error, ErrorKind};
 use std::{fs, io};
 
+mod solution_10_1;
+mod solution_10_2;
 mod solution_1_1;
 mod solution_1_2;
 mod solution_2_1;
