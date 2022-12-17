@@ -67,14 +67,7 @@ pub fn solve(input: &str) -> String {
                 if diff.x.abs() > 1 || diff.y.abs() > 1 {
                     rope[i] += match diff.x.abs() > diff.y.abs() {
                         true => {
-                            // yeah...
-                            let diagonal = if diff.y == 0 {
-                                0
-                            } else if diff.y.is_positive() {
-                                1
-                            } else {
-                                -1
-                            };
+                            let diagonal = diff.y.clamp(-1, 1);
                             if diff.x.is_positive() {
                                 Coords { x: 1, y: diagonal }
                             } else {
@@ -82,13 +75,7 @@ pub fn solve(input: &str) -> String {
                             }
                         }
                         false => {
-                            let diagonal = if diff.x == 0 {
-                                0
-                            } else if diff.x.is_positive() {
-                                1
-                            } else {
-                                -1
-                            };
+                            let diagonal = diff.x.clamp(-1, 1);
                             if diff.y.is_positive() {
                                 Coords { x: diagonal, y: 1 }
                             } else {
