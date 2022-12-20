@@ -4,6 +4,8 @@ use std::{fs, io};
 
 mod solution_10_1;
 mod solution_10_2;
+mod solution_11_1;
+mod solution_11_2;
 mod solution_1_1;
 mod solution_1_2;
 mod solution_2_1;
