@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 solution_macro = { path = "./solution_macro" }
+nom = "7.1.1"
